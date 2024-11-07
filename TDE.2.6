@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h> // Biblioteca necessária para a função strcat()
+
+int main() {
+    char str1[100], str2[100], result[200]; // Arrays para armazenar as strings e a string de resultado
+
+    // Lê as duas strings do usuário
+    printf("Digite a primeira string: ");
+    fgets(str1, sizeof(str1), stdin); // Lê a primeira string
+
+    printf("Digite a segunda string: ");
+    fgets(str2, sizeof(str2), stdin); // Lê a segunda string
+
+    // Remove o caractere '\n' das duas strings, se presente
+    str1[strcspn(str1, "\n")] = '\0';
+    str2[strcspn(str2, "\n")] = '\0';
+
+    // Copia a primeira string para a string result
+    strcpy(result, str1);
+
+    // Concatena a segunda string à string result
+    strcat(result, str2);
+
+    // Exibe o resultado da concatenação
+    printf("Resultado da concatenação: %s\n", result);
+
+    return 0;
+}
