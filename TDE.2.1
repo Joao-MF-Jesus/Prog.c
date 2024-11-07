@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100]; 
+
+    
+    printf("Digite uma string: ");
+    fgets(str, sizeof(str), stdin); // Usa fgets para ler a string (para lidar com espaços)
+
+   
+    printf("Conteúdo da string: %s", str);
+
+    
+    printf("Comprimento da string: %lu\n", strlen(str) - 1); // Subtrai 1 para não contar o '\n' adicionado pelo fgets
+
+    return 0;
+}
